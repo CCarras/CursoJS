@@ -1,5 +1,3 @@
-
-
 class Persona {
 
     static _conteo = 0;
@@ -44,22 +42,21 @@ class Persona {
 
 }
 
+class Heroe extends Persona {
+    clan = 'Sin clan';
 
-const espaiderman = new Persona('Pedro Parquero', 'Espaider', 'Mi sentido arácnido... la leche');
-const dezpul = new Persona('Jeremías Santos', 'Dezpul', 'Jejejej');
+    constructor (nombre, codigo, frase) {
+        super(nombre, codigo, frase);
 
-// console.log(dezpul);
-dezpul.quienSoy();
-dezpul.miFrase();
+        this.clan = 'Los avenllers';
+    }
 
-dezpul.setComidaFavorita = 'Hamburguesa smash';
-// dezpul.nemesis = 'Agapito do Sousa';
+    quienSoy() {
+        console.log(`Soy ${this.nombre} del clan de ${this.clan}`);
+        super.quienSoy();
+    }
+}
 
-// console.log(dezpul.getComidaFavorita)
-
-// console.log(dezpul);
-// Persona._conteo = 2;
-console.log('Conteo estático', Persona._conteo);
-console.log(Persona.conteo);
-Persona.mensaje();
-
+const espaiderman = new Heroe('Decrepito Fernandez', 'Espaidermen', 'Mi sentido arácnido negro femenino me avisa');
+espaiderman.quienSoy();
+console.log(espaiderman);
